@@ -28,15 +28,18 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1>Ruby ISBNdb</h1>
+          <h1>
+<a name="ruby-isbndb" class="anchor" href="#ruby-isbndb"><span class="octicon octicon-link"></span></a>Ruby ISBNdb</h1>
 
 <p>Ruby ISBNdb is a simple, Ruby library that connects to <a href="http://isbndb.com">ISBNdb.com's Web Service</a> and API. Ruby ISBNdb is written to mimic the ease of ActiveRecord and other ORM programs, without all the added hassles. It's still in beta phases, but it is almost fully functional for the basic search features of ISBNdb.</p>
 
-<h2>Version 1.x</h2>
+<h2>
+<a name="version-1x" class="anchor" href="#version-1x"><span class="octicon octicon-link"></span></a>Version 1.x</h2>
 
 <p><em>ISBNdb 1.x.x has been deprecated!</em>. You should upgrade to the new version as soon as possible. The old documentation is still available in the <a href="https://github.com/sethvargo/isbndb/tree/75cfe76d096f92b2dfaf1c1b42d7c84ff86fcbc0">git history</a>. There are <em>significant</em> changes in this new version, so please test appropriately.</p>
 
-<h2>Installation</h2>
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>To get started, install the gem:</p>
 
@@ -45,115 +48,92 @@
 
 <p>Alternatively, you can add it to your Gemfile:</p>
 
-<div class="highlight">
-<pre><span class="n">gem</span> <span class="s1">'isbndb'</span><span class="p">,</span> <span class="s1">'~&gt; 2.0.0'</span>
-</pre>
-</div>
+<div class="highlight highlight-ruby"><pre><span class="n">gem</span> <span class="s1">'isbndb'</span><span class="p">,</span> <span class="s1">'~&gt; 2.0.0'</span>
+</pre></div>
 
-
-<h2>Basic Setup</h2>
+<h2>
+<a name="basic-setup" class="anchor" href="#basic-setup"><span class="octicon octicon-link"></span></a>Basic Setup</h2>
 
 <p>To get started, you'll need to create a <code>config/isbndb.yml</code> file in your project root. It should look like this:</p>
 
-<div class="highlight">
-<pre><span class="l-Scalar-Plain">access_keys</span><span class="p-Indicator">:</span>
+<div class="highlight highlight-yml"><pre><span class="l-Scalar-Plain">access_keys</span><span class="p-Indicator">:</span>
   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">KEY_1</span>
   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">KEY_2</span>
   <span class="l-Scalar-Plain">...</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>Where you list your access keys. This was in response to security holes in version 1.x where values were passed directly to the initializer.</p>
 
 <p>Now you're ready to get started:</p>
 
-<div class="highlight">
-<pre><span class="vi">@query</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_book_by_name</span><span class="p">(</span><span class="s1">'Ruby'</span><span class="p">)</span>
-</pre>
-</div>
+<div class="highlight highlight-ruby"><pre><span class="vi">@query</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_book_by_title</span><span class="p">(</span><span class="s1">'Ruby'</span><span class="p">)</span>
+</pre></div>
 
-
-<h2>ActiveRecord-like Usage</h2>
+<h2>
+<a name="activerecord-like-usage" class="anchor" href="#activerecord-like-usage"><span class="octicon octicon-link"></span></a>ActiveRecord-like Usage</h2>
 
 <p>Another reason why you'll love Ruby ISBNdb is it's similarity to ActiveRecord. In fact, it's <em>based</em> on ActiveRecord, so it should look similar. It's best to lead by example, so here are a few ways to search for books, authors, etc:</p>
 
-<div class="highlight">
-<pre><span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_book_by_isbn</span><span class="p">(</span><span class="s2">"978-0-9776-1663-3"</span><span class="p">)</span>
-<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"Agile Development"</span><span class="p">)</span>
-<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_author_by_name</span><span class="p">(</span><span class="s2">"Seth Vargo"</span><span class="p">)</span>
-<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_publisher_by_name</span><span class="p">(</span><span class="s2">"Pearson"</span><span class="p">)</span>
-</pre>
-</div>
+<div class="highlight highlight-ruby"><pre><span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_book_by_isbn</span><span class="p">(</span><span class="s2">"978-0-9776-1663-3"</span><span class="p">)</span>
+<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"Agile Development"</span><span class="p">)</span>
+<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_author_by_name</span><span class="p">(</span><span class="s2">"Seth Vargo"</span><span class="p">)</span>
+<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_publisher_by_name</span><span class="p">(</span><span class="s2">"Pearson"</span><span class="p">)</span>
+</pre></div>
 
-
-<h2>Advanced Usage</h2>
+<h2>
+<a name="advanced-usage" class="anchor" href="#advanced-usage"><span class="octicon octicon-link"></span></a>Advanced Usage</h2>
 
 <p>Additionally, you can also use a more advanced syntax for complete control:</p>
 
-<div class="highlight">
-<pre><span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="s1">'books'</span><span class="p">,</span> <span class="ss">:where</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:isbn</span> <span class="o">=&gt;</span> <span class="s1">'978-0-9776-1663-3'</span> <span class="p">})</span>
-<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="s1">'books'</span><span class="p">,</span> <span class="ss">:where</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:author</span> <span class="o">=&gt;</span> <span class="s1">'Seth Vargo'</span> <span class="p">},</span> <span class="ss">:results</span> <span class="o">=&gt;</span> <span class="s1">'prices'</span><span class="p">)</span>
-</pre>
-</div>
-
+<div class="highlight highlight-ruby"><pre><span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="s1">'books'</span><span class="p">,</span> <span class="ss">:where</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:isbn</span> <span class="o">=&gt;</span> <span class="s1">'978-0-9776-1663-3'</span> <span class="p">})</span>
+<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="s1">'books'</span><span class="p">,</span> <span class="ss">:where</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:author</span> <span class="o">=&gt;</span> <span class="s1">'Seth Vargo'</span> <span class="p">},</span> <span class="ss">:results</span> <span class="o">=&gt;</span> <span class="s1">'prices'</span><span class="p">)</span>
+</pre></div>
 
 <p>Options for <code>:collection</code> include <strong>books</strong>, <strong>subjects</strong>, <strong>categories</strong>, <strong>authors</strong>, and <strong>publishers</strong>.</p>
 
 <p>If you are unfamiliar with some of these options, have a look at the <a href="http://isbndb.com/docs/api/">ISBNdb API</a></p>
 
-<h2>Processing Results</h2>
+<h2>
+<a name="processing-results" class="anchor" href="#processing-results"><span class="octicon octicon-link"></span></a>Processing Results</h2>
 
 <p>A <code>ResultSet</code> is nothing more than an enhanced array of <code>Result</code> objects. The easiest way to process results from Ruby ISBNdb is most easily done using the <code>.each</code> method.</p>
 
-<div class="highlight">
-<pre><span class="n">results</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"Agile Development"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"Agile Development"</span><span class="p">)</span>
 <span class="n">results</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span>
   <span class="nb">puts</span> <span class="s2">"isbn10: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">isbn</span><span class="si">}</span><span class="s2">"</span>
   <span class="nb">puts</span> <span class="s2">"authors: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">authors_text</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p><strong>Note</strong>: calling a method on a <code>Result</code> object that is <code>empty?</code>, <code>blank?</code>, or <code>nil?</code> will <em>always</em> return <code>nil</code>. This was a calculated decision so that developers can do the following:</p>
 
-<div class="highlight">
-<pre><span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">nil?</span>
-</pre>
-</div>
-
+<div class="highlight highlight-ruby"><pre><span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">nil?</span>
+</pre></div>
 
 <p>versus</p>
 
-<div class="highlight">
-<pre><span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">nil?</span> <span class="o">||</span> <span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">blank?</span> <span class="o">||</span> <span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">empty?</span>
-</pre>
-</div>
-
+<div class="highlight highlight-ruby"><pre><span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">nil?</span> <span class="o">||</span> <span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">blank?</span> <span class="o">||</span> <span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">empty?</span>
+</pre></div>
 
 <p>because ISBNdb.com API is generally inconsistent with respect to returning empty strings, whitespace characters, or nothing at all.</p>
 
 <p><strong>Note</strong>: XML-keys to method names are inversely mapped. CamelCased XML keys and attributes (like BookData or TitleLong) are converted to lowercase under_scored methods (like book_data or title_long). ALL XML keys and attributes are mapped in this way.</p>
 
-<h2>Pagination</h2>
+<h2>
+<a name="pagination" class="anchor" href="#pagination"><span class="octicon octicon-link"></span></a>Pagination</h2>
 
 <p>Pagination is based on the <code>ResultSet</code> object. The <code>ResultSet</code> object contains the methods <code>go_to_page</code>, <code>next_page</code>, and <code>prev_page</code>... Their function should not require too much explanation. Here's a basic example:</p>
 
-<div class="highlight">
-<pre><span class="n">results</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
 <span class="n">results</span><span class="o">.</span><span class="n">next_page</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>A more realistic example - getting <strong>all</strong> books of a certain title:</p>
 
-<div class="highlight">
-<pre><span class="n">results</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
 <span class="k">while</span> <span class="n">results</span>
   <span class="n">results</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
     <span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span>
@@ -161,100 +141,90 @@
 
   <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">next_page</span>
 <span class="k">end</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>It seems incredibly unlikely that a developer would ever use <code>prev_page</code>, but it's still there if you need it.</p>
 
 <p>Because there may be cases where a developer may need a specific page, the <code>go_to_page</code> method also exists. Consider an example where you batch-process books into your own database (which is probably against Copyright laws, but you don't seem to care...):</p>
 
-<div class="highlight">
-<pre><span class="n">results</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">go_to_page</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># where 50 is the page number you want</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p><strong>Note</strong>: <code>go_to_page</code>, <code>next_page</code> and <code>prev_page</code> return <code>nil</code> if the <code>ResultSet</code> is out of <code>Result</code> objects. If you try something like <code>results.next_page.next_page</code>, you could get a whiny nil. Think <code>LinkedLists</code> when working with <code>go_to_page</code>, <code>next_page</code> and <code>prev_page</code>.</p>
 
 <p><strong>BIGGER NOTE</strong>: <code>go_to_page</code>, <code>next_page</code> and <code>prev_page</code> BOTH make a subsequent call to the API, using up one of your 500 daily request limits. Please keep this in mind!</p>
 
-<h2>Advanced Key Management</h2>
+<h2>
+<a name="advanced-key-management" class="anchor" href="#advanced-key-management"><span class="octicon octicon-link"></span></a>Advanced Key Management</h2>
 
 <p>As over version 2.0, all access key management has moved into the <code>config/isbndb.yml</code> file. ISBNdb will auto-rollover if you specify multiple keys.</p>
 
-<h2>Statistics</h2>
+<h2>
+<a name="statistics" class="anchor" href="#statistics"><span class="octicon octicon-link"></span></a>Statistics</h2>
 
 <p>Ruby ISBNdb now supports basic statistics (from the server):</p>
 
-<div class="highlight">
-<pre><span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">keystats</span> <span class="c1"># =&gt; {:requests =&gt; 50, :granted =&gt; 49}</span>
-<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">keystats</span><span class="o">[</span><span class="ss">:granted</span><span class="o">]</span> <span class="c1"># =&gt; 49</span>
-</pre>
-</div>
-
+<div class="highlight highlight-ruby"><pre><span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">keystats</span> <span class="c1"># =&gt; {:requests =&gt; 50, :granted =&gt; 49}</span>
+<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">keystats</span><span class="o">[</span><span class="ss">:granted</span><span class="o">]</span> <span class="c1"># =&gt; 49</span>
+</pre></div>
 
 <p><strong>Note</strong>: Ironically, this information also comes from the server, so it counts as a request...</p>
 
-<h2>Exceptions</h2>
+<h2>
+<a name="exceptions" class="anchor" href="#exceptions"><span class="octicon octicon-link"></span></a>Exceptions</h2>
 
 <p>Ruby ISBNdb could raise the following possible exceptions:</p>
 
-<div class="highlight">
-<pre><span class="no">ISBNdb</span><span class="o">::</span><span class="no">AccessKeyError</span>
-</pre>
-</div>
-
+<div class="highlight highlight-ruby"><pre><span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:AccessKeyError</span>
+</pre></div>
 
 <p>You will most likely encounter <code>ISBNdb::AccessKeyError</code> when you have reached your 500-request daily limit. <code>ISBNdb::InvalidURIError</code> usually occurs when using magic finder methods with typographical errors.</p>
 
-<h2>A Real-Life Example</h2>
+<h2>
+<a name="a-real-life-example" class="anchor" href="#a-real-life-example"><span class="octicon octicon-link"></span></a>A Real-Life Example</h2>
 
 <p>Here is a real-life example of how to use Ruby ISBNdb. Imagine a Rails application that recommends books. You have written a model, <code>Book</code>, that has a variety of methods. One of those class methods, <code>similar</code>, returns a list of book isbn values that are similar to the current book. Here's how one may do that:</p>
 
-<div class="highlight">
-<pre><span class="c1"># books_controller.rb</span>
+<div class="highlight highlight-ruby"><pre><span class="c1"># books_controller.rb</span>
 <span class="k">def</span> <span class="nf">simliar</span>
   <span class="vi">@book</span> <span class="o">=</span> <span class="no">Book</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
-  <span class="vi">@query</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="s1">'API-KEY-1'</span><span class="p">,</span> <span class="s1">'API-KEY-2'</span><span class="o">]</span><span class="p">)</span>
+  <span class="vi">@query</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="s1">'API-KEY-1'</span><span class="p">,</span> <span class="s1">'API-KEY-2'</span><span class="o">]</span><span class="p">)</span>
   <span class="vi">@isbns</span> <span class="o">=</span> <span class="vi">@book</span><span class="o">.</span><span class="n">similar</span> <span class="c1"># returns an array like [1234567890, 0987654321, 3729402827...]</span>
 
   <span class="vi">@isbns</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">isbn</span><span class="o">|</span>
     <span class="k">begin</span>
-      <span class="p">(</span><span class="vi">@books</span> <span class="o">||=</span> <span class="o">[]</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_book_by_isbn</span><span class="p">(</span><span class="n">isbn</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
-    <span class="k">rescue</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">AccessKeyError</span>
+      <span class="p">(</span><span class="vi">@books</span> <span class="o">||=</span> <span class="o">[]</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_book_by_isbn</span><span class="p">(</span><span class="n">isbn</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+    <span class="k">rescue</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:AccessKeyError</span>
       <span class="no">SomeMailer</span><span class="o">.</span><span class="n">send_limit_email</span><span class="o">.</span><span class="n">deliver!</span>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</pre>
-</div>
+</pre></div>
 
-
-<div class="highlight">
-<pre><span class="c1"># similar.html.erb</span>
-<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">The</span> <span class="n">following</span> <span class="n">books</span> <span class="n">are</span> <span class="n">recommeded</span> <span class="k">for</span> <span class="n">you</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
+<div class="highlight highlight-ruby"><pre><span class="c1"># similar.html.erb</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">The</span> <span class="n">following</span> <span class="n">books</span> <span class="n">are</span> <span class="n">recommeded</span> <span class="k">for</span> <span class="ss">you</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
 <span class="sr">&lt;% @books.each do |book| %&gt;</span>
 <span class="sr">  &lt;div class="book"&gt;</span>
 <span class="sr">    &lt;h2&gt;&lt;%= book.title_long %&gt;&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">authors</span><span class="o">&lt;</span><span class="sr">/strong&gt;: &lt;%= book.authors_text %&gt;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="sr">/div&gt;</span>
 <span class="sr">&lt;% end %&gt;</span>
-</pre>
-</div>
+</pre></div>
 
-
-<h2>Testing</h2>
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
 
 <p><a href="http://travis-ci.org/sethvargo/isbndb"><img src="http://travis-ci.org/sethvargo/isbndb.png" alt="Build Status"></a></p>
 
-<h2>Change Log</h2>
+<h2>
+<a name="change-log" class="anchor" href="#change-log"><span class="octicon octicon-link"></span></a>Change Log</h2>
 
 <p>2012-6-17 - Released v2.0
 2011-3-11 - Officially changed from ruby_isbndb to isbndb with special thanks to <a href="https://github.com/terje">Terje Tjervaag</a> for giving up the gem name :)</p>
 
-<h2>Acknowledgments</h2>
+<h2>
+<a name="acknowledgments" class="anchor" href="#acknowledgments"><span class="octicon octicon-link"></span></a>Acknowledgments</h2>
 
 <p>Special thanks to Terje Tjervaag (<a href="https://github.com/terje">https://github.com/terje</a>) for giving up the gem name 'isbndb'!</p>
 
@@ -273,7 +243,7 @@
 
           <p class="repo-owner"><a href="https://github.com/sethvargo/isbndb"></a> is maintained by <a href="https://github.com/sethvargo">sethvargo</a>.</p>
 
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
       </div>
     </div>
