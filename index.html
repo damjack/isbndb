@@ -1,34 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <title>isbndb by sethvargo</title>
 
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <title>isbndb by sethvargo</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>isbndb</h1>
-        <h2>Ruby ISBNdb is a simple, Ruby library that connects to ISBNdb.com's Web Service and API.</h2>
-        <a href="https://github.com/sethvargo/isbndb" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">isbndb</h1>
+        <p class="header">Ruby ISBNdb is a simple, Ruby library that connects to ISBNdb.com's Web Service and API.</p>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/sethvargo/isbndb/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/sethvargo/isbndb/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/sethvargo/isbndb">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/sethvargo">sethvargo</a></p>
+
+
+      </header>
+      <section>
+        <h1>
 <a name="ruby-isbndb" class="anchor" href="#ruby-isbndb"><span class="octicon octicon-link"></span></a>Ruby ISBNdb</h1>
 
 <p>Ruby ISBNdb is a simple, Ruby library that connects to <a href="http://isbndb.com">ISBNdb.com's Web Service</a> and API. Ruby ISBNdb is written to mimic the ease of ActiveRecord and other ORM programs, without all the added hassles. It's still in beta phases, but it is almost fully functional for the basic search features of ISBNdb.</p>
@@ -66,7 +68,7 @@
 
 <p>Now you're ready to get started:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="vi">@query</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_book_by_title</span><span class="p">(</span><span class="s1">'Ruby'</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="vi">@query</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_book_by_title</span><span class="p">(</span><span class="s1">'Ruby'</span><span class="p">)</span>
 </pre></div>
 
 <h2>
@@ -74,10 +76,10 @@
 
 <p>Another reason why you'll love Ruby ISBNdb is it's similarity to ActiveRecord. In fact, it's <em>based</em> on ActiveRecord, so it should look similar. It's best to lead by example, so here are a few ways to search for books, authors, etc:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_book_by_isbn</span><span class="p">(</span><span class="s2">"978-0-9776-1663-3"</span><span class="p">)</span>
-<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"Agile Development"</span><span class="p">)</span>
-<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_author_by_name</span><span class="p">(</span><span class="s2">"Seth Vargo"</span><span class="p">)</span>
-<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_publisher_by_name</span><span class="p">(</span><span class="s2">"Pearson"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_book_by_isbn</span><span class="p">(</span><span class="s2">"978-0-9776-1663-3"</span><span class="p">)</span>
+<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"Agile Development"</span><span class="p">)</span>
+<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_author_by_name</span><span class="p">(</span><span class="s2">"Seth Vargo"</span><span class="p">)</span>
+<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_publisher_by_name</span><span class="p">(</span><span class="s2">"Pearson"</span><span class="p">)</span>
 </pre></div>
 
 <h2>
@@ -85,8 +87,8 @@
 
 <p>Additionally, you can also use a more advanced syntax for complete control:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="s1">'books'</span><span class="p">,</span> <span class="ss">:where</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:isbn</span> <span class="o">=&gt;</span> <span class="s1">'978-0-9776-1663-3'</span> <span class="p">})</span>
-<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="s1">'books'</span><span class="p">,</span> <span class="ss">:where</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:author</span> <span class="o">=&gt;</span> <span class="s1">'Seth Vargo'</span> <span class="p">},</span> <span class="ss">:results</span> <span class="o">=&gt;</span> <span class="s1">'prices'</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="s1">'books'</span><span class="p">,</span> <span class="ss">:where</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:isbn</span> <span class="o">=&gt;</span> <span class="s1">'978-0-9776-1663-3'</span> <span class="p">})</span>
+<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="s1">'books'</span><span class="p">,</span> <span class="ss">:where</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:author</span> <span class="o">=&gt;</span> <span class="s1">'Seth Vargo'</span> <span class="p">},</span> <span class="ss">:results</span> <span class="o">=&gt;</span> <span class="s1">'prices'</span><span class="p">)</span>
 </pre></div>
 
 <p>Options for <code>:collection</code> include <strong>books</strong>, <strong>subjects</strong>, <strong>categories</strong>, <strong>authors</strong>, and <strong>publishers</strong>.</p>
@@ -98,7 +100,7 @@
 
 <p>A <code>ResultSet</code> is nothing more than an enhanced array of <code>Result</code> objects. The easiest way to process results from Ruby ISBNdb is most easily done using the <code>.each</code> method.</p>
 
-<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"Agile Development"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"Agile Development"</span><span class="p">)</span>
 <span class="n">results</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span>
   <span class="nb">puts</span> <span class="s2">"isbn10: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">isbn</span><span class="si">}</span><span class="s2">"</span>
@@ -125,7 +127,7 @@
 
 <p>Pagination is based on the <code>ResultSet</code> object. The <code>ResultSet</code> object contains the methods <code>go_to_page</code>, <code>next_page</code>, and <code>prev_page</code>... Their function should not require too much explanation. Here's a basic example:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
 <span class="n">results</span><span class="o">.</span><span class="n">next_page</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">result</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
@@ -133,7 +135,7 @@
 
 <p>A more realistic example - getting <strong>all</strong> books of a certain title:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
 <span class="k">while</span> <span class="n">results</span>
   <span class="n">results</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
     <span class="nb">puts</span> <span class="s2">"title: </span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span>
@@ -147,7 +149,7 @@
 
 <p>Because there may be cases where a developer may need a specific page, the <code>go_to_page</code> method also exists. Consider an example where you batch-process books into your own database (which is probably against Copyright laws, but you don't seem to care...):</p>
 
-<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
+<div class="highlight highlight-ruby"><pre><span class="n">results</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_books_by_title</span><span class="p">(</span><span class="s2">"ruby"</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">go_to_page</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># where 50 is the page number you want</span>
 </pre></div>
 
@@ -165,8 +167,8 @@
 
 <p>Ruby ISBNdb now supports basic statistics (from the server):</p>
 
-<div class="highlight highlight-ruby"><pre><span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">keystats</span> <span class="c1"># =&gt; {:requests =&gt; 50, :granted =&gt; 49}</span>
-<span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">keystats</span><span class="o">[</span><span class="ss">:granted</span><span class="o">]</span> <span class="c1"># =&gt; 49</span>
+<div class="highlight highlight-ruby"><pre><span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">keystats</span> <span class="c1"># =&gt; {:requests =&gt; 50, :granted =&gt; 49}</span>
+<span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">keystats</span><span class="o">[</span><span class="ss">:granted</span><span class="o">]</span> <span class="c1"># =&gt; 49</span>
 </pre></div>
 
 <p><strong>Note</strong>: Ironically, this information also comes from the server, so it counts as a request...</p>
@@ -176,7 +178,7 @@
 
 <p>Ruby ISBNdb could raise the following possible exceptions:</p>
 
-<div class="highlight highlight-ruby"><pre><span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:AccessKeyError</span>
+<div class="highlight highlight-ruby"><pre><span class="no">ISBNdb</span><span class="o">::</span><span class="no">AccessKeyError</span>
 </pre></div>
 
 <p>You will most likely encounter <code>ISBNdb::AccessKeyError</code> when you have reached your 500-request daily limit. <code>ISBNdb::InvalidURIError</code> usually occurs when using magic finder methods with typographical errors.</p>
@@ -189,13 +191,13 @@
 <div class="highlight highlight-ruby"><pre><span class="c1"># books_controller.rb</span>
 <span class="k">def</span> <span class="nf">simliar</span>
   <span class="vi">@book</span> <span class="o">=</span> <span class="no">Book</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
-  <span class="vi">@query</span> <span class="o">=</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="s1">'API-KEY-1'</span><span class="p">,</span> <span class="s1">'API-KEY-2'</span><span class="o">]</span><span class="p">)</span>
+  <span class="vi">@query</span> <span class="o">=</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="s1">'API-KEY-1'</span><span class="p">,</span> <span class="s1">'API-KEY-2'</span><span class="o">]</span><span class="p">)</span>
   <span class="vi">@isbns</span> <span class="o">=</span> <span class="vi">@book</span><span class="o">.</span><span class="n">similar</span> <span class="c1"># returns an array like [1234567890, 0987654321, 3729402827...]</span>
 
   <span class="vi">@isbns</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">isbn</span><span class="o">|</span>
     <span class="k">begin</span>
-      <span class="p">(</span><span class="vi">@books</span> <span class="o">||=</span> <span class="o">[]</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:Query</span><span class="o">.</span><span class="n">find_book_by_isbn</span><span class="p">(</span><span class="n">isbn</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
-    <span class="k">rescue</span> <span class="ss">ISBNdb</span><span class="p">:</span><span class="ss">:AccessKeyError</span>
+      <span class="p">(</span><span class="vi">@books</span> <span class="o">||=</span> <span class="o">[]</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">Query</span><span class="o">.</span><span class="n">find_book_by_isbn</span><span class="p">(</span><span class="n">isbn</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+    <span class="k">rescue</span> <span class="no">ISBNdb</span><span class="o">::</span><span class="no">AccessKeyError</span>
       <span class="no">SomeMailer</span><span class="o">.</span><span class="n">send_limit_email</span><span class="o">.</span><span class="n">deliver!</span>
     <span class="k">end</span>
   <span class="k">end</span>
@@ -229,26 +231,13 @@
 <p>Special thanks to Terje Tjervaag (<a href="https://github.com/terje">https://github.com/terje</a>) for giving up the gem name 'isbndb'!</p>
 
 <p>Special thanks to Lazlo (<a href="https://github.com/lazlo">https://github.com/lazlo</a>) for forwarding his project here!</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/sethvargo/isbndb/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/sethvargo/isbndb/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/sethvargo/isbndb"></a> is maintained by <a href="https://github.com/sethvargo">sethvargo</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-
-            <script type="text/javascript">
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
