@@ -15,26 +15,22 @@ To get started, install the gem:
 Alternatively, you can add it to your Gemfile:
 
 ```ruby
-gem 'isbndb', '~> 2.0.0'
+gem 'isbndb', '~> 4.0.0'
 ```
 
 Basic Setup
 -----------
-To get started, you'll need to create a `config/isbndb.yml` file in your project root. It should look like this:
+To get started, you'll need to add new ENV in your project root. It should look like this:
 
-```yml
-access_keys:
-  - KEY_1
-  - KEY_2
-  ...
+```env
+  ISBNDB_API_KEY: YOUR-KEY
 ```
-
-Where you list your access keys. This was in response to security holes in version 1.x where values were passed directly to the initializer.
 
 Now you're ready to get started:
 
 ```ruby
-@query = ISBNdb::Query.find_book_by_title('Ruby')
+isbndb = ISBNdb::Client.new
+@query = isbndb.book('9788812345678')
 ```
 
 ActiveRecord-like Usage
@@ -47,17 +43,6 @@ ISBNdb::Query.find_books_by_title("Agile Development")
 ISBNdb::Query.find_author_by_name("Seth Vargo")
 ISBNdb::Query.find_publisher_by_name("Pearson")
 ```
-
-Advanced Usage
---------------
-Additionally, you can also use a more advanced syntax for complete control:
-
-```ruby
-ISBNdb::Query.find(:collection => 'books', :where => { :isbn => '978-0-9776-1663-3' })
-ISBNdb::Query.find(:collection => 'books', :where => { :author => 'Seth Vargo' }, :results => 'prices')
-```
-
-Options for `:collection` include **books**, **subjects**, **categories**, **authors**, and **publishers**.
 
 If you are unfamiliar with some of these options, have a look at the [ISBNdb API](http://isbndb.com/docs/api/)
 

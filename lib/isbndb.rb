@@ -1,12 +1,26 @@
+require 'isbndb/version'
+
+require 'active_support'
+require 'active_support/core_ext'
+
+require 'httparty'
+require 'virtus'
+require 'json'
+require 'pp'
+require 'addressable/uri'
+
 module ISBNdb
-  require 'httparty'
+  autoload :Client, 'isbndb/client'
+  autoload :Collection, 'isbndb/collection'
 
-  require 'isbndb/access_key_set'
-  require 'isbndb/exceptions'
-  require 'isbndb/query'
-  require 'isbndb/result_set'
-  require 'isbndb/result'
+  module Errors
+    class ForbiddenAccessKeyError < StandardError; end
+    class MissingAccessKeyError < StandardError; end
+  end
 
-  require 'core_extensions/string'
-  require 'core_extensions/nil'
+  module Resources
+    autoload :Base, 'isbndb/resources/base'
+    autoload :Author, 'isbndb/resources/author'
+    autoload :Book, 'isbndb/resources/book'
+  end
 end
