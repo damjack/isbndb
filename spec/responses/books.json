@@ -1,0 +1,83 @@
+{
+    "total": 39,
+    "books": [
+        {
+            "title": "Il Velo di Maya (Italian Edition)",
+            "image": "https://images.isbndb.com/covers/30/87/9781537603087.jpg",
+            "title_long": "Il Velo di Maya (Italian Edition)",
+            "date_published": "2016-10-13",
+            "publisher": "CreateSpace Independent Publishing Platform",
+            "authors": [
+                "Nicholas Parfit"
+            ],
+            "isbn13": "9781537603087",
+            "publish_date": "2016-10-13",
+            "binding": "Paperback",
+            "isbn": "1537603086"
+        },
+        {
+            "title": "I SEGRETI DEL GIOVANE LEONARDO DA VINCI (I Nuovi Bestseller DAE) (Italian Edition)",
+            "image": "https://images.isbndb.com/covers/10/95/9788893051095.jpg",
+            "title_long": "I SEGRETI DEL GIOVANE LEONARDO DA VINCI (I Nuovi Bestseller DAE) (Italian Edition)",
+            "date_published": "2017-04-14",
+            "publisher": "Dario Abate Editore",
+            "authors": [
+                "Giuseppe Spampinato"
+            ],
+            "isbn13": "9788893051095",
+            "publish_date": "2017-04-14",
+            "binding": "Paperback",
+            "isbn": "8893051095"
+        },
+        {
+            "title": "Il Libro DI Pittura: Codice Vaticano Urb. Lat. 1270 (English and Latin Edition)",
+            "image": "https://images.isbndb.com/covers/56/59/9788809205659.jpg",
+            "title_long": "Il Libro DI Pittura: Codice Vaticano Urb. Lat. 1270 (English and Latin Edition)",
+            "date_published": "1995-07-31",
+            "publisher": "Giunti Gruppo Editoriale",
+            "authors": [
+                "Leonardo da Vinci"
+            ],
+            "isbn13": "9788809205659",
+            "publish_date": "1995-07-31",
+            "binding": "Hardcover",
+            "isbn": "8809205650"
+        },
+        {
+            "title": "Il Codice da Vinci spiegato ai suoi lettori",
+            "image": "https://images.isbndb.com/covers/98/79/9788839909879.jpg",
+            "title_long": "Il Codice da Vinci spiegato ai suoi lettori",
+            "publisher": "Queriniana",
+            "authors": [
+                ""
+            ],
+            "isbn13": "9788839909879",
+            "binding": "Paperback",
+            "isbn": "8839909877"
+        },
+        {
+            "title": "Il Codice da Vinci. Bugie e falsi storici",
+            "image": "https://images.isbndb.com/covers/01/55/9788860320155.jpg",
+            "title_long": "Il Codice da Vinci. Bugie e falsi storici",
+            "publisher": "Società Editrice Fiorentina",
+            "authors": [
+                ""
+            ],
+            "isbn13": "9788860320155",
+            "binding": "Paperback",
+            "isbn": "8860320151"
+        },
+        {
+            "title": "Il Codice da Vinci. Sceneggiatura illustrata",
+            "image": "https://images.isbndb.com/covers/72/65/9788804557265.jpg",
+            "title_long": "Il Codice da Vinci. Sceneggiatura illustrata",
+            "publisher": "n/a",
+            "authors": [
+                ""
+            ],
+            "isbn13": "9788804557265",
+            "binding": "Hardcover",
+            "isbn": "8804557265"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "book": {
+        "format": "Hardcover",
+        "image": "https://images.isbndb.com/covers/34/13/9788804523413.jpg",
+        "title_long": "il-codice-da-vinci",
+        "date_published": "2006",
+        "authors": [
+            "Dan Brown"
+        ],
+        "publisher": "Mondadori",
+        "title": "Il Codice Da Vinci",
+        "isbn13": "9788804523413",
+        "isbn": "8804523413"
+    }
+}
