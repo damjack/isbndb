@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'httparty'
   s.add_dependency 'virtus'
-  s.add_dependency 'activesupport', '~> 4.2.10'
+  s.add_dependency 'activesupport'
 
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rake'
