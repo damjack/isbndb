@@ -22,5 +22,6 @@ module ISBNdb
     autoload :Base, 'isbndb/resources/base'
     autoload :Author, 'isbndb/resources/author'
     autoload :Book, 'isbndb/resources/book'
+    autoload :Publisher, 'isbndb/resources/publisher'
   end
 end

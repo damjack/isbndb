@@ -1,6 +1,6 @@
 module ISBNdb
   module Resources
-    class Author < Base
+    class Publisher < Base
 
       attr_reader :name
       attribute :books, Array[Book]

@@ -2,7 +2,7 @@ module ISBNdb
   module Resources
     class Book < Base
 
-      attribute :publisher, String
+      attribute :publisher, Publisher
       attribute :language, String
       attribute :overview, String
       attribute :title_long, String
