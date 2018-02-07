@@ -4,6 +4,10 @@ module ISBNdb
 
       attribute :publisher, Publisher
       attribute :language, String
+      attribute :image, String
+      attribute :binding, String
+      attribute :publish_date, String
+      attribute :date_published, String
       attribute :overview, String
       attribute :title_long, String
       attribute :dimensions, String
